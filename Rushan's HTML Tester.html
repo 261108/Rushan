@@ -1,93 +1,78 @@
-
+<!DOCTYPE html>
 <html>
 <head>
-<title>
-Rushan's HTML Tester
-</title>
+<title>Rushan's HTML Tester</title>
 <script>
-
 var myWindow;
 
 function makeWindow(text){
-  //NOTE:  no spaces in the second parameter string!!!
-  myWindow = window.open("","myWindow");
+  myWindow = window.open("", "myWindow");
   myWindow.document.write(text);
   myWindow.document.close();
-} // end makeWindow
-
+}
 
 function makeDefault(){
-  // load standard HTML5 boilerplate
-
   var output = "";
-  output += '<html> \n';
-  output += '<head> \n';
-  output += '<title> </title> \n';
-  output += '</head> \n';
-  output += '<body> \n';
-  output += ' \n';
-  output += '</body> \n';
-  output += '</html> \n';
+  output += document.getElementById('txtInput').value;
+  output += '\n<html>\n';
+  output += '<head>\n';
+  output += '<title></title>\n';
+  output += '</head>\n';
+  output += '<body>\n';
+  output += '\n';
+  output += '</body>\n';
+  output += '</html>\n';
 
   var txtInput = document.getElementById('txtInput');
-  txtInput.innerHTML = output;
-} // end makeDefault
-
+  txtInput.value = output;
+}
 </script>
 <style>
 textarea {
- font-size: 25;
-</style>
-</head>
-
-<style>
+  font-size: 25px;
+}
 body {
   background-image: url('https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
+.button {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.button-primary {
+  background-color: #00aaff;
+  color: #ffffff;
+  border: none;
+}
+.button-secondary {
+  background-color: #ff5500;
+  color: #ffffff;
+  border: none;
+}
 </style>
+</head>
+<body>
 <center>
-<form name = "myForm" >
-<h1 style="color:orange; font-family:Lucida Handwriting;font-size:50">Rushan's  HTML  Tester</h1>
+<form name="myForm">
+<h1 style="color:orange; font-family:Lucida Handwriting;font-size:50px;">Rushan's HTML Tester</h1>
 <hr>
-<!--
-<select name = "selPage">
-  <option value = null>
-  <option value = /home/ajharris/public_html/webDesign/html/standard.html>
-    standard HTML skeleton
-   
- 
 
-</select>
-<input type = submit 
-       value = "Get source code">
-<br>
--->
-<button type = "button"
-        onClick = "makeDefault()">
-  HTML Tags
-</button>
+<button class="button button-primary" type="button" onClick="makeDefault()">HTML Tags</button>
 
-<input type = "button"
-       value = "Run"
-       onClick = makeWindow(window.document.myForm.txtInput.value)>
- 
-<input type="reset"
-       value="Clear">
-  
-       
+<input class="button button-secondary" type="button" value="Run" onClick="makeWindow(window.document.myForm.txtInput.value)">
 
-<br>
-<br>
+<input class="button button-secondary" type="reset" value="Clear">
 
-<textArea name = txtInput
-          id = "txtInput"
-          rows= 100
-          cols = 70>
-</textArea>
+<br><br>
 
+<textarea name="txtInput" id="txtInput" rows="100" cols="70"></textarea>
+
+</form>
+</center>
 </body>
 </html>
-
