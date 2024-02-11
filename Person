@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<img src="https://thispersondoesnotexist.com/" width="658" height="658">
+<button id="refreshButton" onclick="location.reload()">Refresh</button>
+</body>
+</html>
